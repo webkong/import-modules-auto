@@ -1,13 +1,13 @@
 {
-  "name": "import-modules",
-  "version": "1.1.0",
-  "description": "Import all modules in a directory",
+  "name": "import-modules-auto",
+  "version": "1.0.2",
+  "description": "Import all modules in a directory smart",
   "license": "MIT",
-  "repository": "sindresorhus/import-files",
+  "repository": "webkong/import-modules-auto",
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
+    "name": "wangsw",
+    "email": "772930508@qq.com",
+    "url": "https://blog.webkong.cn"
   },
   "engines": {
     "node": ">=4"

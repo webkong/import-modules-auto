@@ -1,6 +1,10 @@
-# import-modules [![Build Status](https://travis-ci.org/sindresorhus/import-modules.svg?branch=master)](https://travis-ci.org/sindresorhus/import-modules)
+# import-modules-auto [![Build Status](https://travis-ci.org/sindresorhus/import-modules-auto.svg?branch=master)](https://travis-ci.org/sindresorhus/import-modules-auto)
 
-> Import all modules in a directory
+Fork from [https://github.com/sindresorhus/import-modules](https://github.com/sindresorhus/import-modules)
+
+Add when import Object-Module, merge Object without key-word.
+
+> Import all modules in a directory smart
 
 *This module is intentionally simple. Not interested in more features.*
 
@@ -8,7 +12,7 @@
 ## Install
 
 ```
-$ npm install --save import-modules
+$ npm install --save import-modules-auto
 ```
 
 
@@ -17,18 +21,24 @@ $ npm install --save import-modules
 ```
 .
 └── dir
-    ├── foo-bar.js
-    └── baz-faz.js
+    ├── foo-bar.js  //function
+    └── baz-faz.js  //object {test: 'value'}
 ```
 
 ```js
-const importModules = require('import-modules');
+const importModules = require('import-modules-auto');
 const modules = importModules('dir');
 
 console.log(modules);
 //=> {fooBar: [Function], bazFaz: [Function]}
 ```
+```js
+const importModules = require('import-modules-auto');
+const modules = importModules('dir',{hasKey: false});
 
+console.log(modules);
+//=> {fooBar: [Function], test: 'value'}
+```
 
 ## API
 
@@ -51,7 +61,12 @@ Type: `boolean`<br>
 Default: `true`
 
 Convert dash-style names (`foo-bar`) to camel-case (`fooBar`).
+##### haskey
 
+Type: `boolean`<br>
+Default: `true`
+
+Can set module without key words, merge object.
 
 ## Related
 
@@ -62,4 +77,4 @@ Convert dash-style names (`foo-bar`) to camel-case (`fooBar`).
 
 ## License
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT © [webkong](https://blog.webkong.cn)
